@@ -19,6 +19,8 @@ C:\vcpkg> .\vcpkg.exe install wil:x64-windows
 ```
 
 ### Usage
+
+Spawn a cmd.exe as administrator, then:
 ```
 C:\Users\last> .\DefenderSwitch.exe -off
 C:\Users\last> .\DefenderSwitch.exe -on
