@@ -53,4 +53,9 @@
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="defsw.gif">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
 </Project>

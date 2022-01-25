@@ -16,8 +16,17 @@ int main(int argc, char** argv)
 		return 0;
 	}
 
-	if (inputSwitch.find("off") != -1) std::thread thread_object(ImpersonateAndStop);
-	else if (inputSwitch.find("on") != -1) std::thread thread_object(ImpersonateAndStart);
+	if (inputSwitch.find("off") != -1)
+	{
+		std::thread stopThread(ImpersonateAndStop);
+		stopThread.join();
+	}
+
+	else if (inputSwitch.find("on") != -1)
+	{
+		std::thread startThread(ImpersonateAndStart);
+		startThread.join();
+	}
 	else PrintUsage();
 
 	return 0;

@@ -22,7 +22,6 @@ bool GetSystem()
 	}
 	else std::cout << "[+] Got a PROCESS_ALL_ACCESS handle to winlogon.exe!\n";
 
-	// we reuse tempTokenHandle and fill it with the token of winlogon.exe so that we don't have to make a new variable
 	wil::unique_handle tokenHandle;
 	success = OpenProcessToken(winlogonHandle.get(), TOKEN_QUERY | TOKEN_DUPLICATE, &tokenHandle);
 	if (!success)
