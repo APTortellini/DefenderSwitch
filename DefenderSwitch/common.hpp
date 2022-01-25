@@ -1,0 +1,45 @@
+#pragma once
+#pragma comment(lib,"ntdll.lib")
+
+#include <ntstatus.h>
+#define WIN32_NO_STATUS // needed to prevent winternl.h from redefining macros defined by ntstatus.h 
+#include <Windows.h>
+#include <winternl.h>
+#include <TlHelp32.h>
+#include <iostream>
+#include <algorithm>
+#include <thread>
+#include <wil/resource.h>
+
+typedef NTSTATUS(NTAPI* pNtImpersonateThread)
+(
+	_In_ HANDLE ServerThreadHandle,
+	_In_ HANDLE ClientThreadHandle,
+	_In_ PSECURITY_QUALITY_OF_SERVICE SecurityQos
+);
+
+void Error
+(
+	_In_ DWORD lastError
+);
+
+DWORD FindPid
+(
+	_In_ std::wstring imageName
+);
+
+DWORD GetFirstThreadID
+(
+	_In_ DWORD dwOwnerPID
+);
+
+bool SetPrivilege(
+	_In_ HANDLE token,
+	_In_ std::wstring privilege,
+	_In_ bool enableDisable
+);
+
+NTSTATUS ImpersonateAndStop();
+NTSTATUS ImpersonateAndStart();
+void PrintUsage();
+bool GetSystem();
