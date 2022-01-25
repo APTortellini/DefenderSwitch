@@ -153,10 +153,10 @@
     <ClCompile Include="SetPrivilege.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="README.md" />
+    <None Include="..\README.md" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="defsw.gif" />
+    <Image Include="..\defsw.gif" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
