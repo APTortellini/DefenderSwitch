@@ -5,7 +5,7 @@
 
 ### TL;DR
 Even though Defender has a lot of fancy defensive features such as tamper protection, it can still be disabled with the following chain of actions:
-1. become NT AUTHORITY\SYSTEM;
+1. enable SeDebugPrivilege;
 2. start the TrustedInstaller service and TrustedInstaller process;
 3. impersonate TrustedInstaller;
 4. open the WinDefend service and stop it;
