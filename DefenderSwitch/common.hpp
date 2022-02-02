@@ -42,4 +42,3 @@ bool SetPrivilege(
 NTSTATUS ImpersonateAndStop();
 NTSTATUS ImpersonateAndStart();
 void PrintUsage();
-bool GetSystem();

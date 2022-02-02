@@ -29,9 +29,6 @@
     <ClCompile Include="GetFirstThreadID.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GetSystem.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="SetPrivilege.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

@@ -145,7 +145,6 @@
     <ClCompile Include="Error.cpp" />
     <ClCompile Include="FindPid.cpp" />
     <ClCompile Include="GetFirstThreadID.cpp" />
-    <ClCompile Include="GetSystem.cpp" />
     <ClCompile Include="ImpersonateAndStart.cpp" />
     <ClCompile Include="ImpersonateAndStop.cpp" />
     <ClCompile Include="main.cpp" />
